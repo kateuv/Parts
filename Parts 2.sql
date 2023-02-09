@@ -47,3 +47,13 @@ WHERE s_id IN (SELECT
   supply
   WHERE
   j_id = 'J2');
+  
+/*Find the name and city of each project supplied by a London-based supplier*/
+SELECT jname, city
+FROM project
+WHERE j_id IN (SELECT
+  j_id
+  FROM
+  supplier
+  WHERE
+  city = 'London');
