@@ -35,3 +35,15 @@ sname
 FROM supplier
 WHERE city = "London";
 
+SELECT *
+FROM project;
+
+/*Find the name and status of each supplier who supplies project J2*/
+SELECT sname, status
+FROM supplier
+WHERE s_id IN (SELECT
+  s_id
+  FROM
+  supply
+  WHERE
+  j_id = 'J2');
