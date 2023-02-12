@@ -57,3 +57,13 @@ WHERE j_id IN (SELECT
   supplier
   WHERE
   city = 'London');
+  
+/*Find the name and city of each project not supplied by a London-based supplier*/
+SELECT jname, city
+FROM project
+WHERE j_id IN (SELECT
+  j_id
+  FROM
+  supplier
+  WHERE
+  city NOT LIKE 'London%');
