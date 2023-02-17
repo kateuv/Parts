@@ -67,3 +67,10 @@ WHERE j_id IN (SELECT
   supplier
   WHERE
   city NOT LIKE 'London%');
+  
+/*4. Find the supplier name, part name and project name for each case where a
+supplier supplies a project with a part, but also the supplier city, project city
+and part city are the same.*/
+SELECT sname, pname, jname
+FROM supplier, part, project
+WHERE supplier.city = project.city AND project.city = part.city;
