@@ -8,7 +8,7 @@ SELECT DISTINCT
 p.pname
 FROM part p;
 
-/* The code returns the unique column names and their id's because that is what I asked it to do*/
+/* The code returns the unique column names and their id's*/
 SELECT DISTINCT
 p.pname, P_id
 FROM part p;
@@ -68,9 +68,9 @@ WHERE j_id IN (SELECT
   WHERE
   city NOT LIKE 'London%');
   
-/*4. Find the supplier name, part name and project name for each case where a
+/*Find the supplier name, part name and project name for each case where a
 supplier supplies a project with a part, but also the supplier city, project city
-and part city are the same.*/
+and part city are the same*/
 SELECT sname, pname, jname
 FROM supplier, part, project
 WHERE supplier.city = project.city AND project.city = part.city;
